@@ -1,5 +1,4 @@
 how to install module 
 
-pip install requests
+pip install json
 
-pip install re
