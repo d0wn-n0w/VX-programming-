@@ -1,49 +1,5 @@
 import json,random
 
-def eval_kondisi(kondisi, memory):
-    kondisi = kondisi.strip()
-    if ">=" in kondisi:
-        var, val = kondisi.split(">=", 1)
-        var = var.strip()
-        val = val.strip()
-        val_angka = val.split()[0] if val else "0"
-        return float(memory.get(var, 0)) >= float(val_angka)
-    elif "<=" in kondisi:
-        var, val = kondisi.split("<=", 1)
-        var = var.strip()
-        val = val.strip()
-        val_angka = val.split()[0] if val else "0"
-        return float(memory.get(var, 0)) <= float(val_angka)
-    elif "!=" in kondisi:
-        var, val = kondisi.split("!=", 1)
-        var = var.strip()
-        val = val.strip()
-        val_angka = val.split()[0] if val else "0"
-        return float(memory.get(var, 0)) != float(val_angka)
-    elif "==" in kondisi:
-        var, val = kondisi.split("==", 1)
-        var = var.strip()
-        val = val.strip()
-        return memory.get(var, "") == val
-    elif "=" in kondisi:
-        var, val = kondisi.split("=", 1)
-        var = var.strip()
-        val = val.strip()
-        return memory.get(var, "") == val
-    elif ">" in kondisi:
-        var, val = kondisi.split(">", 1)
-        var = var.strip()
-        val = val.strip()
-        val_angka = val.split()[0] if val else "0"
-        return float(memory.get(var, 0)) > float(val_angka)
-    elif "<" in kondisi:
-        var, val = kondisi.split("<", 1)
-        var = var.strip()
-        val = val.strip()
-        val_angka = val.split()[0] if val else "0"
-        return float(memory.get(var, 0)) < float(val_angka)
-    return False
-
 def execute_l(prt):
             try:
                 global memory
